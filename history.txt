@@ -1,0 +1,567 @@
+    1  wget 127.0.0.1:32768
+    2  wget 127.0.0.1:32772
+    3  while true ; do wget 127.0.0.1:32772 ; sleep 5; done
+    4  while true ; do wget 127.0.0.1:32772 ; sleep 5; done 
+    5  while true ; do wget 127.0.0.1:32772 2>&1; sleep 5; done 
+    6  while true ; do wget 127.0.0.1:32772 >1; sleep 5; done 
+    7  ls -l
+    8  rm index.html*
+    9  ls -l
+   10  rm 1 
+   11  ls -la
+   12  while true ; do wget -O - 127.0.0.1:32772 ; sleep 5; done 
+   13  ls -l
+   14  while true ; do wget -O - 127.0.0.1:32772 ; sleep 5; done 
+   15  docker history 
+   16  docker history $(docker ps -ql)
+   17  docker history dasisteintest/myfirstcont:1.0
+   18  docker history dasisteintest/myscndcont:1.1
+   19  ps -ef
+   20  ls -l /opt/
+   21  ls -l /
+   22  df -h
+   23  ls -l
+   24  ls -la
+   25  docker version
+   26  dpkg -l|grep docker
+   27  dpkg -L docker-engine
+   28  dpkg -i docker-engine
+   29  man dpkg
+   30  dpkg -I docker-engine
+   31  man dpkg
+   32  dpkg-deb -I docker-engine
+   33  man dpkg-deb
+   34  docker ps
+   35  cd /opt/
+   36  ls -l
+   37  cat /etc/apt/sources.list
+   38  docker run "hello world"
+   39  docker run hello-world
+   40  docker run -it ubuntu bash
+   41  docker ps
+   42  docker run -it ubuntu ps
+   43  apt-get search docker
+   44  man apt-get 
+   45  id docker
+   46  dpkg -l|grep docker
+   47  cd /etc/docker/
+   48  ls -l
+   49  cat key.json 
+   50  dpkg -L docker-engine
+   51  docker search java
+   52  cd /etc/default/
+   53  ls -l
+   54  docker search java
+   55  dpkg -L docker-engine
+   56  less /etc/init/docker.conf 
+   57  qqq
+   58  docker search java
+   59  docker images
+   60  docker pull
+   61  docker pull busybox:latest
+   62  docker images
+   63  docker run busybox
+   64  docker ps
+   65  docker run busybox bash
+   66  docker run busybox ps
+   67  docker start busybox
+   68  docker run ubuntu:zesty bash
+   69  docker images
+   70  ps -ef
+   71  docker run ubuntu:zesty bash
+   72  docker run ubuntu:zesty ps
+   73  docker ps -a
+   74  docker ps
+   75  docker run -it ubuntu:zesty bash
+   76  docker ps
+   77  docker ps -a
+   78  docker run ubuntu:zesty echo "hello World"
+   79  docker ps -a
+   80  docker run -it ubuntu:zesty bash
+   81  docker ps
+   82  docker attach c695
+   83  docker run -it ubuntu:zesty bash
+   84  docker ps
+   85  docker attach 0bfc
+   86  docker run -it ubuntu:zesty 
+   87  docker ps -a
+   88  docker start 6e8cc
+   89  docker ps
+   90  docker stop 6e8cc
+   91  docker ps
+   92  docker ps -a
+   93  docker start 6e8cc
+   94  docker start 7f3f
+   95  docker ps
+   96  ps -ef| grep docker
+   97  pstree
+   98  docker ps -a --no-trunc
+   99  docker ps
+  100  docker ps -q
+  101  for i in `docker ps -q`; do docker stop $i; done
+  102  docker ps -l
+  103  docker ps
+  104  docker ps -q
+  105  docker start 7f3f
+  106  docker ps
+  107  docker ps -a
+  108  docker ps -a --filter "started=true"
+  109  docker ps -a --filter "running=true"
+  110  docker ps -a --filter "up=true"
+  111  docker run -d 6e8cc ping 127.0.0.1 -c 50
+  112  docker run -d ubuntu:zesty ping 127.0.0.1 -c 50
+  113  docker run -d centos:7 ping 127.0.0.1 -c 50
+  114  pstree
+  115  docker ps
+  116  watch -d -n1 docker ps
+  117  docker run -d -P nginx
+  118  docker ps
+  119  wget localhost:80
+  120  netstat -an|less
+  121  wget localhost:32768
+  122  rm index.html 
+  123  docker attach 010ae
+  124  docker ps
+  125  docker ps -a
+  126  docker start 010ae
+  127  docker ps
+  128  docker attach 010ae
+  129  docker ps
+  130  docker start 010ae
+  131  docker ps
+  132  docker attach 010ae bash
+  133  docker ps
+  134  docker ps -a --filter status=running
+  135  docker ps -a --filter status=running,label=color
+  136  docker ps -a --filter status=running --filter label=color
+  137  docker ps -a --filter label=color
+  138  docker ps -a --filter "label=color"
+  139  docker attach 7f3f
+  140  ps -ef | grep bash
+  141  pstree
+  142  ps aux | grep 19273
+  143  ps aux | grep 23910
+  144  ps aux | grep 23883
+  145  ps aux | grep 19153
+  146  ps faux
+  147  docker attach 7f3f
+  148  docker run -d ubuntu ping 127.0.0.1 -c50
+  149  docker run -d centos:7 ping 127.0.0.1 -c 50
+  150  docker ps
+  151  docker attach e7bf
+  152  docker run -d centos:7 ping 127.0.0.1 -c 50
+  153  docker attach 5832
+  154  docker ps
+  155  docker run -d -it centos:7 ping 127.0.0.1 -c 50
+  156  docker attach dd4dd
+  157  docker ps
+  158  docker attach 010
+  159  docker ps
+  160  docker start 010
+  161  docker ps
+  162  docker exec -it 010 bash
+  163  docker ps
+  164  docker attach 010
+  165  docker start 010
+  166  docker exec -it 010 ps
+  167  docker ps
+  168  docker exec -it 010 bash
+  169  docker ps
+  170  docker logs 010
+  171  docker logs --tail 5 010
+  172  docker logs 010
+  173  docker logs --tail 5 010
+  174  docker logs -f 010
+  175  docker logs 10 -f 010
+  176  docker logs --tail 10 -f 010
+  177  docker ps
+  178  docker run -d ubuntu:zesty ping 127.0.0.1 -c 100
+  179  docker run -d centos:7 ping 127.0.0.1 -c 100
+  180  docker ps
+  181  docker logs --tail 10 -f 010
+  182  docker logs --tail 10 -f ee66
+  183  docker exec -it 010 ping 127.0.0.1 -c 100 
+  184  docker ps
+  185  docker exec -it 010 ping 127.0.0.1 -c 100 
+  186  ls -l /var/lib/docker/
+  187  ls -l /var/lib/docker/containers/
+  188  ls -l /var/lib/docker/containers/010aebed432d8d6064c9762fb04fa372dbec2d370ea8f75c141b2a1c54295a10/
+  189  ls -l /var/lib/docker/containers/010aebed432d8d6064c9762fb04fa372dbec2d370ea8f75c141b2a1c54295a10/010aebed432d8d6064c9762fb04fa372dbec2d370ea8f75c141b2a1c54295a10-json.log 
+  190  tail -f /var/lib/docker/containers/010aebed432d8d6064c9762fb04fa372dbec2d370ea8f75c141b2a1c54295a10/010aebed432d8d6064c9762fb04fa372dbec2d370ea8f75c141b2a1c54295a10-json.log 
+  191  docker ps
+  192  docker ps -a
+  193  docker start ee66
+  194  docker ps
+  195  docker start 0bfc
+  196  docker ps
+  197  docker start 0bfc
+  198  docker run -d tomcat
+  199  docker logs -f c96
+  200  docker stop c96
+  201  docker start -a c96
+  202  docker start c96
+  203  docker ps
+  204  docker logs -f c96
+  205  docker logs --tail 10 -f c96
+  206  docker inspect c96
+  207  docker ps
+  208  docker inspect vigilant_lichterman
+  209  docker inspect vigilant_lichterman --format {{.NetworkSettings.IPAddress}}
+  210  docker inspect vigilant_lichterman --format {{.State}}
+  211  docker inspect vigilant_lichterman --format {{json .State}}
+  212  docker inspect vigilant_lichterman --format='{{json .State}}'
+  213  docker inspect vigilant_lichterman --format='{{json .State.Pid}}'
+  214  docker inspect vigilant_lichterman --format='{{json .State}}' | json_pp
+  215  man json_pp
+  216  docker ps
+  217  docker rm 0bf
+  218  docker ps --filter='status=exited'
+  219  docker ps -ql
+  220  docker ps -aq
+  221  docker rm ${docker ps -aq}
+  222  docker rm $(docker ps -aq)
+  223  docker ps
+  224  docker ps -q
+  225  for i in `docker ps -q`; do docker stop $i: done
+  226  for i in `docker ps -q`; do docker stop $i; done
+  227  docker ps
+  228  docker ps -q
+  229  docker ps -a
+  230  docker ps -aq
+  231  docker rm $(docker ps -aq)
+  232  docker ps -a
+  233  docker images
+  234  docker image ls
+  235  docker run -it ubuntu:14.04 bash
+  236  docker ps -l
+  237  docker diff e52
+  238  docker ps -l
+  239  docker ps -lq
+  240  docker diff $(docker ps -lq)
+  241  docker commit $(docker ps -lq) dasisteintest/myfirstcont:1.0
+  242  docker images
+  243  docker image ls
+  244  docker run -it dasisteintest/myfirstcont:1.0 bash
+  245  docker diff $(docker ps -ql)
+  246  docker history 
+  247  docker history $(docker ps -ql)
+  248  docker ps
+  249  docker ps -ql
+  250  docker history $(docker ps -ql):1.0
+  251  docker history dasisteintest/myfirstcont:1.0
+  252  docker commit $(docker ps -lq) dasisteintest/myfirstcont:1.1
+  253  docker image ls
+  254  docker ps
+  255  docker start $(docker ps -ql)
+  256  docker ps
+  257  docker attach $(docker ps -ql)
+  258  docker stop $(docker ps -ql)
+  259  docker ps
+  260  docker image ls
+  261  docker ps -q
+  262  docker ps -l
+  263  docker history dasisteintest/myfirstcont:1.0
+  264  cd
+  265  ls -l
+  266  ls -la
+  267  mkdir myfirstcont
+  268  cd myfirstcont/
+  269  touch Dockerfile
+  270  vi Dockerfile 
+  271  cd ..
+  272  mv myfirstcont myscndcont
+  273  cd myscndcont/
+  274  docker history 
+  275  docker image ls
+  276  vi Dockerfile 
+  277  docker build -t dasisteintest/myscndcont:1.0
+  278  docker build -t dasisteintest/myscndcont:1.0 .
+  279  docker image ls
+  280  cd ..
+  281  cp -av myscndcont mythrdcont
+  282  vi mythrdcont/Dockerfile 
+  283  docker build -t dasisteintest/mythrdcont:1.0 mythrdcont
+  284  docker image ls
+  285  ls -l
+  286  cp -av mythrdcont my4thcont
+  287  vi my4thcont/Dockerfile 
+  288  docker build -t dasisteintest/my4thcont:1.0 my4thcont
+  289  docker image ls
+  290  vi my4thcont/Dockerfile 
+  291  docker build -t dasisteintest/my4thcont:1.0 my4thcont
+  292  docker image ls
+  293  ls -la my4thcont/
+  294  ls -la
+  295  history 
+  296  docker build -t dasisteintest/my4thcont:1.0 my4thcont
+  297  docker image ls
+  298  docker login dasisteintest
+  299  docker login --username dasisteintest
+  300  docker image ls
+  301  docker images
+  302  docker push dasisteintest/myfirstcont:1.0
+  303  docker push dasisteintest/myfirstcont:1.1
+  304  ls -l
+  305  cat myscndcont/Dockerfile 
+  306  vi myscndcont/Dockerfile 
+  307  docker build -t dasisteintest/myscndcont:1.1 myscndcont
+  308  docker images
+  309  docker push dasisteintest/myscndcont:1.0
+  310  docker push dasisteintest/myscndcont:1.1
+  311  vi mythrdcont/Dockerfile 
+  312  docker build -t dasisteintest/mythrdcont:1.1 mythrdcont
+  313  docker run dasisteintest/mythrdcont:1.1
+  314  dokcer ps
+  315  docker ps
+  316  docker run dasisteintest/mythrdcont:1.1 echo "hello world"
+  317  docker ps
+  318  vi my4thcont/Dockerfile 
+  319  mkdir my5thcont
+  320  cd my5thcont/
+  321  vi HelloWorld.java
+  322  javac HelloWorld.java 
+  323  vi Dockerfile
+  324  cd ..
+  325  docker build -t dasisteintest/my5thcont:1.0 my5thcont
+  326  docker run dasisteintest/my5thcont:1.0 
+  327  docker run -it --entrypoint bash dasisteintest/my5thcont:1.0
+  328  docker ps
+  329  cat my5thcont/Dockerfile 
+  330  vi my5thcont/Dockerfile 
+  331  mkdir my5thcont/src
+  332  mkdir my5thcont/bin
+  333  mv my5thcont/HelloWorld.java my5thcont/src/
+  334  fg
+  335  docker run -it --entrypoint bash dasisteintest/my5thcont:1.0
+  336  vi my5thcont/Dockerfile 
+  337  docker run -it --entrypoint bash dasisteintest/my5thcont:1.0
+  338  docker build -t dasisteintest/my5thcont:1.0 my5thcont
+  339  docker run -it --entrypoint bash dasisteintest/my5thcont:1.0
+  340  vi my5thcont/Dockerfile 
+  341  docker build -t dasisteintest/my5thcont:1.0 my5thcont
+  342  docker run -it --entrypoint bash dasisteintest/my5thcont:1.0
+  343  docker push dasisteintest/my5thcont:1.0
+  344  vi my5thcont/Dockerfile 
+  345  docker build -t dasisteintest/my5thcont:1.1 my5thcont
+  346  docker images
+  347  docker push dasisteintest/my5thcont:1.1
+  348  cp -av my5thcont javahelloworld
+  349  docker build -t dasisteintest/javahelloworld:1.0 javahelloworld
+  350  docker push dasisteintest/javahelloworld:1.0
+  351  docker logout
+  352  docker push dasisteintest/javahelloworld:1.0
+  353  docker login --username dasisteintest
+  354  docker push dasisteintest/javahelloworld:1.0
+  355  docker run -it --entrypoint bash dasisteintest/my5thcont:1.0
+  356  vi javahelloworld/Dockerfile 
+  357  docker image ls
+  358  docker tag javahelloworld:1.0 dasisteintest/javahelloworld
+  359  docker tag 07295 dasisteintest/javahelloworld
+  360  docker ps
+  361  docker image ls
+  362  docker tag 07295 dasisteintest/javahelloworld:1.1
+  363  docker image ls
+  364  vi javahelloworld/Dockerfile 
+  365  docker build -t dasisteintest/javahelloworld:1.1 javahelloworld
+  366  vi javahelloworld/Dockerfile 
+  367  docker build -t dasisteintest/javahelloworld:1.1 javahelloworld
+  368  docker build -t dasisteintest/javahelloworld:1.0 javahelloworld
+  369  docker image ls
+  370  vi javahelloworld/Dockerfile 
+  371  docker build -t dasisteintest/javahelloworld:1.0 javahelloworld
+  372  docker tag 07295 dasisteintest/javahelloworld:1.1
+  373  docker image ls
+  374  docker tag c3057 dasisteintest/javahelloworld:1.1
+  375  docker image ls
+  376  docker push dasisteintest/javahelloworld:1.1
+  377  cp -av javahelloworld myprivateapp
+  378  docker build -t dasisteintest/myprivateapp:1.0 myprivateapp
+  379  docker push dasisteintest/myprivateapp:1.0
+  380  docker images
+  381  docker rmi
+  382  docker rmi dasisteintest/javahelloworld:1.0
+  383  docker image ls
+  384  docker rmi dasisteintest/javahelloworld
+  385  docker image ls
+  386  docker pull dasisteintest/javahelloworld
+  387  docker image ls
+  388  docker push dasisteintest/javahelloworld
+  389  docker image ls
+  390  docker build -t dasisteintest/javahelloworld javahelloworld
+  391  docker image ls
+  392  docker push dasisteintest/javahelloworld
+  393  docker volume ls
+  394  docker volume create --name test1
+  395  docker volume ls
+  396  docker run -it -v test1:/www/website ubuntu:14.04 bash
+  397  docker ps -l
+  398  docker ps -lq
+  399  docker commit $(docker ps -lq) test:1.0
+  400  docker ls
+  401  docker image ls
+  402  docker run -it test:1.0 bash
+  403  docker ps
+  404  docker inspect serene_lumiere --format='{{json .Mounts}}' | json_pp
+  405  docker volume inspect test1
+  406  docker volume inspect test1 --format '{{json .Mounts.Mountpoint}}'
+  407  docker volume inspect test1 --format '{{json .Mountpoint}}'
+  408  docker volume inspect test1 --format '{{.Mountpoint}}'
+  409  cd $(docker volume inspect test1 --format '{{.Mountpoint}}')
+  410  ls -l
+  411  docker run -it -v test1:/www/website test:1.0 bash
+  412  docker ps
+  413  touch test2.html
+  414  ls -l
+  415  docker run -it -v test1:/www/website test:1.0 bash
+  416  docker ps
+  417  docker exec -it /www/website bash
+  418  docker exec -it a75 bash
+  419  docker ps
+  420  docker exec -it baed bash
+  421  docker rm baed
+  422  docker stop baed
+  423  docker stop a75
+  424  docker rm baed
+  425  docker rm a75
+  426  ls -l
+  427  docker volume rm test1
+  428  cd -
+  429  docker volume rm test1
+  430  docker ps
+  431  docker ps -a
+  432  docker ps
+  433  docker volume rm bf137
+  434  docker rm bf137
+  435  docker volume rm test1
+  436  ls -l $(docker volume inspect test1 --format '{{.Mountpoint}}')
+  437  $(docker volume inspect test1 --format '{{.Mountpoint}}')
+  438  cd -
+  439  mkdir public_html
+  440  touch public_html/index.html
+  441  docker run -it -v $(pwd)/public_html:/data/www ubuntu:14.04
+  442  vi public_html/index.html 
+  443  docker attach $(docker ps -ql)
+  444  docker volume create --name nginx_logs
+  445  docker run -d -P --name nginx_server -v $(pwd)/public_html:/usr/share/nginx/html -v nginx_logs:/var/log/nginx nginx
+  446  docker exec -it nginx_server bash
+  447  docker ps
+  448  wget -O - localhost:32773
+  449  docker exec -it nginx_server bash
+  450  docker ps
+  451  docker exec -it nginx_server bash
+  452  docker images
+  453  docker rm -f nginx_server
+  454  docker run -d -P --name nginx_server -v $(pwd)/public_html:/usr/share/nginx/html -v nginx_logs:/var/log/nginx trainigteam/nginx
+  455  docker run -d -P --name nginx_server -v $(pwd)/public_html:/usr/share/nginx/html -v nginx_logs:/var/log/nginx trainingteam/nginx
+  456  cd /var/log/nginx
+  457  docker ps
+  458  docker exec -it nginx_server bash
+  459  docker rm -f nginx_server
+  460  docker run -d -P --name nginx_server -v $(pwd)/public_html:/usr/share/nginx/html -v nginx_logs:/var/log/nginx trainingteam/nginx
+  461  docker ps 
+  462  docker exec -it nginx_server bash
+  463  docker rm -f nginx_server
+  464  docker volume inspect nginx_logs
+  465  ls -l $(docker volume inspect nginx_logs)
+  466  ls -l $(docker volume inspect nginx_logs --filter='{{.Mountpoint}}')
+  467  ls -l $(docker inspect nginx_logs --filter='{{.Mountpoint}}')
+  468  ls -l $(docker inspect nginx_logs --filter='{{.Mount.Mountpoint}}')
+  469  ls -l $(docker inspect --filter='{{.Mount.Mountpoint}}')
+  470  docker ps
+  471  docker run -d -P --name nginx_server -v $(pwd)/public_html:/usr/share/nginx/html -v nginx_logs:/var/log/nginx trainingteam/nginx
+  472  docker ps
+  473  docker run -it -v nginx_logs:/data/mylogs:ro ubuntu:14.04 bash
+  474  docker ps
+  475  docker exec -it nginx_server bash
+  476  docker rm nginx_server
+  477  docker rm -f nginx_server
+  478  docker run -d -it ubuntu:14.04 
+  479  apt-get install bridge-utils
+  480  docker run -d -it ubuntu:14.04 
+  481  docker ps
+  482  brctl show docker0
+  483  docker exec -it 0c47 bash
+  484  docker ps
+  485  ip a
+  486  brctl show docker0
+  487  docker exec -it 0c47 bash
+  488  docker ps
+  489  docker exec -it 244 bash
+  490  docker inspect --filter='{{.NetworkSettings}}'
+  491  docker inspect --help
+  492  docker inspect --format='{{.NetworkSettings}}'
+  493  docker inspect NetworkSettings --format='{{.IPAdress}}'
+  494  docker inspect inspiring_goldberg --format {{.NetworkSettings.IPAddress}}
+  495  docker inspect inspiring_goldberg --format {{.NetworkSettings}}
+  496  docker inspect inspiring_goldberg --format {{json .NetworkSettings}}
+  497  docker inspect inspiring_goldberg --format {{.NetworkSettings}}|json_pp 
+  498  docker inspect inspiring_goldberg --format {{.NetworkSettings}}|json_pp
+  499  docker inspect inspiring_goldberg --format {{json .NetworkSettings}}|json_pp
+  500  docker inspect inspiring_goldberg --format='{{json .NetworkSettings}}'|json_pp
+  501  docker network ls
+  502  docker rm -f 
+  503  docker rm -f $(docker ps -ql)
+  504  docker ps
+  505  docker rm -f $(docker ps -ql)
+  506  docker ps
+  507  docker network create --driver bridge my_bridge
+  508  docker network ls
+  509  docker run -d -it --net=my_bridge --name ubuntu3 ubuntu:14.04
+  510  docker run -d -it --net=my_bridge --name ubuntu4 ubuntu:14.04
+  511  ip a
+  512  brctl show docker0
+  513  brctl show ubuntu3
+  514  ping ubuntu3
+  515  docker ps
+  516  docker attach $(docker ps -ql)
+  517  docker sp
+  518  docker ps
+  519  docker run -it --net=my_bridge --name ubuntu4 ubuntu:14.04
+  520  docker ps
+  521  docker run -d -it --net=my_bridge --name ubuntu1 ubuntu:14.04
+  522  docker run -d -it --net=my_bridge --name ubuntu2 ubuntu:14.04
+  523  docker ps
+  524  docker run -it --net=my_bridge --name ubuntu4 ubuntu:14.04
+  525  docker rm ubuntu4
+  526  docker run -it --net=my_bridge --name ubuntu4 ubuntu:14.04
+  527  docker network connect my_bridge ubuntu2
+  528  docker exec ubuntu2 ping ubuntu3
+  529  docker ps
+  530  docker exec ubuntu3 ping ubuntu2
+  531  docker exec ubuntu3 ping ubuntu4
+  532  docker run -d -p 80:8080 tomcat
+  533  docker ps
+  534  docker port vigourus_williams
+  535  docker port vigorous_williams
+  536  docker run -d -p 80:80 -p 90:8080 nginx
+  537  docker ps
+  538  docker rm 5d5
+  539  docker rm -f 5d5
+  540  docker run -d -p 80:80 -p 90:8080 nginx
+  541  docker ps
+  542  docker port youthful_hodkin
+  543  docker port youthful_hodgkin
+  544  netstat|less
+  545  netsta -an|less
+  546  netstat -an|less
+  547  docker ps
+  548  ls -l
+  549  vi my5thcont/Dockerfile 
+  550  cp myscndcont my6thcont
+  551  cp -av myscndcont my6thcont
+  552  vi my6thcont/Dockerfile 
+  553  docker build -t dasisteintest/my6thcont my6thcont
+  554  docker run -d -P e30
+  555  docker ps
+  556  cd javahelloworld/
+  557  ls -l
+  558  git init
+  559  git add src/HelloWorld.java 
+  560  git commit -m "first comit"
+  561  git remote add origin https://github.com/rahki/javahelloworld.git
+  562  git push origin master
+  563  yhistory 
+  564  history 
+  565  mailx
+  566  apt-get install mailutils
+  567  history > history.txt
